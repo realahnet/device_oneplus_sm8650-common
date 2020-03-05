@@ -288,6 +288,9 @@ debug.stagefright.c2inputsurface=-1
 media.stagefright.audio.deep=false
 vendor.media.omx=0
 
+# Netflix
+ro.netflix.bsp_rev=Q8650-37577-1
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=3.0
