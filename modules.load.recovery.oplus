@@ -57,7 +57,7 @@ oplus_hbp_core.ko
 oplus_ipa_thermal.ko
 oplus_mdmfeature.ko
 oplus_mdmrst.ko
-oplus_network_esim.ko
+oplus_uim2_switch.ko
 oplus_network_oem_qmi.ko
 oplus_network_rf_cable_monitor.ko
 oplus_network_sim_detect.ko

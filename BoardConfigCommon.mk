@@ -176,9 +176,9 @@ TARGET_KERNEL_EXT_MODULES += \
     oplus/kernel/dfr:kbuild \
     oplus/kernel/graphics:kbuild \
     oplus/kernel/network/oplus_network_oem_qmi:kbuild \
-    oplus/kernel/network/oplus_network_esim:kbuild \
     oplus/kernel/network/oplus_network_sim_detect:kbuild \
     oplus/kernel/network/oplus_rf_cable_monitor:kbuild \
+    oplus/kernel/network/oplus_uim2_switch:kbuild \
     oplus/kernel/touchpanel/oplus_touchscreen_v2/touch_custom:kbuild \
     oplus/kernel/touchpanel/oplus_touchscreen_v2:kbuild \
     oplus/kernel/touchpanel/synaptics_hbp:kbuild \

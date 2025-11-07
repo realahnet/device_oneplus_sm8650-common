@@ -144,6 +144,8 @@ on boot
     chmod 0660 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode
     chown system system /sys/kernel/oplus_display/adfr_config
     chmod 0660 /sys/kernel/oplus_display/adfr_config
+    chown system system /sys/devices/platform/soc/soc:uim2-switch/uim2_state
+    chmod 0660 /sys/devices/platform/soc/soc:uim2-switch/uim2_state
 
     # Allow system to manipulate KProfiles modes and parameters
     chown system system /sys/module/kprofiles/parameters/auto_kprofiles
@@ -294,6 +296,14 @@ on property:debug.high_touch_rate=0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/high_rate 0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/high_rate 0
 
+on property:debug.disable_esim=1
+    setprop persist.vendor.disable_esim 1
+    write /sys/devices/platform/soc/soc:uim2-switch/uim2_state 1
+
+on property:debug.disable_esim=0
+    setprop persist.vendor.disable_esim 0
+    write /sys/devices/platform/soc/soc:uim2-switch/uim2_state 0
+
 # persist properties for restoring from boot
 on property:persist.vendor.high_touch_rate=1 && property:vendor.post_boot.parsed=1
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/high_rate 1
@@ -313,7 +323,6 @@ on property:debug.touch_sensitivity_mode=0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/glove_mode 0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode 0
 
-# persist properties for restoring from boot
 on property:persist.vendor.touch_sensitivity_mode=1 && property:vendor.post_boot.parsed=1
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/glove_mode 1
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode 1
@@ -321,3 +330,9 @@ on property:persist.vendor.touch_sensitivity_mode=1 && property:vendor.post_boot
 on property:persist.vendor.touch_sensitivity_mode=0 && property:vendor.post_boot.parsed=1
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/glove_mode 0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode 0
+
+on property:persist.vendor.disable_esim=0 && property:vendor.post_boot.parsed=1
+    write /sys/devices/platform/soc/soc:uim2-switch/uim2_state 0
+
+on property:persist.vendor.disable_esim=1 && property:vendor.post_boot.parsed=1
+    write /sys/devices/platform/soc/soc:uim2-switch/uim2_state 1
