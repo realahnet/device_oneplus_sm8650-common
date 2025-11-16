@@ -83,6 +83,8 @@ CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/pineapple
 CONFIG_PAL_SRC_DIR := $(AUDIO_HAL_DIR)/../pal/configs/pineapple
 QCV_FAMILY_SKUS := pineapple cliffs
 
+$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+
 PRODUCT_COPY_FILES += \
 $(foreach DEVICE_SKU, $(QCV_FAMILY_SKUS), \
     $(CONFIG_HAL_SRC_DIR)/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/audio_effects.conf \
