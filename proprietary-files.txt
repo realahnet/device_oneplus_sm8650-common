@@ -445,28 +445,6 @@ odm/etc/vintf/manifest/manifest_oplus_fingerprint_aidl_v3.xml
 odm/lib64/libclstc_fod_color.so
 odm/lib64/libolc_vnd.so
 
-# Fingerprint firmware
-odm/vendor/firmware/uff_gx.b00
-odm/vendor/firmware/uff_gx.b01
-odm/vendor/firmware/uff_gx.b02
-odm/vendor/firmware/uff_gx.b03
-odm/vendor/firmware/uff_gx.b04
-odm/vendor/firmware/uff_gx.b05
-odm/vendor/firmware/uff_gx.b06
-odm/vendor/firmware/uff_gx.b07
-odm/vendor/firmware/uff_gx.b08
-odm/vendor/firmware/uff_gx.mdt
-odm/vendor/firmware/uff_spi.b00
-odm/vendor/firmware/uff_spi.b01
-odm/vendor/firmware/uff_spi.b02
-odm/vendor/firmware/uff_spi.b03
-odm/vendor/firmware/uff_spi.b04
-odm/vendor/firmware/uff_spi.b05
-odm/vendor/firmware/uff_spi.b06
-odm/vendor/firmware/uff_spi.b07
-odm/vendor/firmware/uff_spi.b08
-odm/vendor/firmware/uff_spi.mdt
-
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service-qti
 vendor/etc/init/android.hardware.gatekeeper-service-qti.rc

@@ -181,11 +181,21 @@ function blob_fixup() {
             ;;
         vendor/lib64/libpwirishalwrapper.so|odm/lib64/libpwirishalwrapper.so)
             case "${DEVICE}" in
-            waffle)
+            waffle | giuliac)
                 [ "$2" = "" ] && return 0
                 "${PATCHELF}" --replace-needed "android.hardware.graphics.composer3-V2-ndk.so" "android.hardware.graphics.composer3-V3-ndk.so" "${2}"
                 ;;
             esac
+            ;;
+        odm/lib64/libOPAlgoCamAiBeautyFaceRetouchCn.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_acquire" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_allocate" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_describe" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lock" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lockPlanes" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_release" "${2}"
+            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_unlock" "${2}"
             ;;
         *)
             return 1
