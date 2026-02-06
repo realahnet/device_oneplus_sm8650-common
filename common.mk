@@ -454,10 +454,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # PowerShare
-PRODUCT_PACKAGES += \
-    vendor.lineage.powershare-service.default
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.powershare-service.default
 
-$(call soong_config_set,lineage_powershare,powershare_path,/proc/wireless/enable_tx)
+#$(call soong_config_set,lineage_powershare,powershare_path,/proc/wireless/enable_tx)
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat
