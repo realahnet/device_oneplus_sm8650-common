@@ -182,7 +182,6 @@ ro.vendor.oplus.camera.isHasselbladCamera=1
 ro.camera.notify_nfc=1
 ro.camerax.extensions.enabled=true
 ro.hardware.camera=oemlayer
-persist.vendor.camera.maxRAWSizes=55
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Chipset
