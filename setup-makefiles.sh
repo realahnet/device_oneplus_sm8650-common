@@ -59,7 +59,6 @@ function lib_to_package_fixup_vendor_variants() {
             vendor.pixelworks.hardware.display@1.2 | \
             vendor.pixelworks.hardware.feature@1.0 | \
             vendor.pixelworks.hardware.feature@1.1 | \
-            vendor.pixelworks.hardware.feature-V1-ndk | \
             vendor.qti.diaghal@1.0 | \
             vendor.qti.hardware.dpmservice@1.0 | \
             vendor.qti.hardware.dpmaidlservice-V1-ndk | \
