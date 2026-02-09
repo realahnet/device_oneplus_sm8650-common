@@ -187,15 +187,29 @@ function blob_fixup() {
                 ;;
             esac
             ;;
-        odm/lib64/libOPAlgoCamAiBeautyFaceRetouchCn.so)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_acquire" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_allocate" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_describe" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lock" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lockPlanes" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_release" "${2}"
-            "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_unlock" "${2}"
+        odm/lib64/libEIS.so|odm/lib64/libEISLive.so|odm/lib64/libHIS.so|odm/lib64/libOGLManager.so|odm/lib64/libOPAlgoCamAiBeautyFaceRetouchCn.so|odm/lib64/libOPAlgoCamFaceBeautyCap.so)
+            case "${DEVICE}" in
+            giuliac)
+                [ "$2" = "" ] && return 0
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_acquire" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_allocate" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_describe" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lock" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_lockPlanes" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_release" "${2}"
+                "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_unlock" "${2}"
+	    esac
+            ;;
+        odm/lib64/libarcsoft_high_dynamic_range_v4.so)
+            case "${DEVICE}" in
+            giuliac)
+                [ "$2" = "" ] && return 0
+                "${PATCHELF}" --clear-symbol-version "remote_handle_close" "${2}"
+                "${PATCHELF}" --clear-symbol-version "remote_handle_invoke" "${2}"
+                "${PATCHELF}" --clear-symbol-version "remote_handle_open" "${2}"
+                "${PATCHELF}" --clear-symbol-version "remote_register_buf_attr" "${2}"
+                "${PATCHELF}" --clear-symbol-version "remote_register_buf" "${2}"
+            esac
             ;;
         *)
             return 1
