@@ -181,7 +181,7 @@ function blob_fixup() {
             ;;
         vendor/lib64/libpwirishalwrapper.so|odm/lib64/libpwirishalwrapper.so)
             case "${DEVICE}" in
-            waffle | giuliac)
+            waffle | giulia | giuliac)
                 [ "$2" = "" ] && return 0
                 "${PATCHELF}" --replace-needed "android.hardware.graphics.composer3-V2-ndk.so" "android.hardware.graphics.composer3-V3-ndk.so" "${2}"
                 ;;
@@ -189,7 +189,7 @@ function blob_fixup() {
             ;;
         odm/lib64/libEIS.so|odm/lib64/libEISLive.so|odm/lib64/libHIS.so|odm/lib64/libOGLManager.so|odm/lib64/libOPAlgoCamAiBeautyFaceRetouchCn.so|odm/lib64/libOPAlgoCamFaceBeautyCap.so)
             case "${DEVICE}" in
-            giuliac)
+            giulia | giuliac)
                 [ "$2" = "" ] && return 0
                 "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_acquire" "${2}"
                 "${PATCHELF}" --clear-symbol-version "AHardwareBuffer_allocate" "${2}"
@@ -202,7 +202,7 @@ function blob_fixup() {
             ;;
         odm/lib64/libarcsoft_high_dynamic_range_v4.so)
             case "${DEVICE}" in
-            giuliac)
+            giulia | giuliac)
                 [ "$2" = "" ] && return 0
                 "${PATCHELF}" --clear-symbol-version "remote_handle_close" "${2}"
                 "${PATCHELF}" --clear-symbol-version "remote_handle_invoke" "${2}"
