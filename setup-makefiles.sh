@@ -77,6 +77,8 @@ function lib_to_package_fixup_vendor_variants() {
             libar-acdb | \
             libar-gsl | \
             liblx-osal | \
+            liblx-ar_util | \
+            vendor.qti.hardware.AGMIPC@1.0-impl | \
             libats | \
             libagm | \
             libwpa_client) ;;
