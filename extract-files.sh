@@ -76,8 +76,11 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2_stock.so" "${2}"
             ;;
         odm/etc/resourcemanager.xml)
-            [ "$2" = "" ] && return 0
-            sed -i "s|\(<speaker_protection_enabled>\)1\(</speaker_protection_enabled>\)|\10\2|" "${2}"
+            case "${DEVICE}" in
+            waffle)
+                [ "$2" = "" ] && return 0
+                sed -i "s|\(<speaker_protection_enabled>\)1\(</speaker_protection_enabled>\)|\10\2|" "${2}"
+            esac
             ;;
         odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc)
             [ "$2" = "" ] && return 0
