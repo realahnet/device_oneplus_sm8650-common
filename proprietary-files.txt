@@ -679,6 +679,7 @@ vendor/bin/vendor_modprobe.sh
 
 # Keymaster
 vendor/bin/hw/android.hardware.security.keymint-service-qti
+vendor/bin/KmInstallKeybox
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
 vendor/lib64/libkeymasterdeviceutils.so
@@ -1383,6 +1384,7 @@ vendor/lib64/libubwcp.so
 # Widevine DRM
 vendor/apex/com.google.android.widevine.nonupdatable.apex
 vendor/etc/oplus_Widevine_licenses.pfm
+odm/lib64/liboemcrypto.so
 
 # WiFi
 odm/bin/init.oplus.wifi.sh
