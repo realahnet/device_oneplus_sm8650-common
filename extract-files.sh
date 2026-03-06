@@ -75,13 +75,6 @@ function blob_fixup() {
             grep -q "libshims_aidl_fingerprint_v3.oplus.so" "${2}" || "${PATCHELF}" --add-needed "libshims_aidl_fingerprint_v3.oplus.so" "${2}"
             "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2_stock.so" "${2}"
             ;;
-        odm/etc/resourcemanager.xml)
-            case "${DEVICE}" in
-            waffle)
-                [ "$2" = "" ] && return 0
-                sed -i "s|\(<speaker_protection_enabled>\)1\(</speaker_protection_enabled>\)|\10\2|" "${2}"
-            esac
-            ;;
         odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc)
             [ "$2" = "" ] && return 0
             sed -i "8i\    task_profiles ProcessCapacityHigh MaxPerformance" "${2}"
