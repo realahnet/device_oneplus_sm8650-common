@@ -16,6 +16,9 @@ subsystem adf
 # Charger
 /sys/class/oplus_chg/*  mmi_charging_enable    0660    system  system
 
+# Consumer IR
+/dev/oplus_consumer_ir                         0666    system  system
+
 # Display
 firmware_directories /mnt/vendor/persist/display/
 
