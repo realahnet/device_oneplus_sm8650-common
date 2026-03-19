@@ -60,6 +60,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import /vendor/etc/init/hw/init.qti.kernel.rc
+import /vendor/etc/init/hw/init.haptics.rc
 
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
@@ -280,21 +281,6 @@ on property:vendor.post_boot.parsed=1
 
     # Enable ADFR features (only functions on supported devices)
     write /sys/kernel/oplus_display/adfr_config 0x109f
-
-on property:debug.haptic_profile=richtap
-    setprop persist.vendor.haptic_profile richtap
-
-on property:debug.haptic_profile=crisp
-    setprop persist.vendor.haptic_profile crisp
-
-on property:debug.haptic_profile=gentle
-    setprop persist.vendor.haptic_profile gentle
-
-on property:debug.haptic_profile=op13crisp
-    setprop persist.vendor.haptic_profile op13crisp
-
-on property:debug.haptic_profile=op13gentle
-    setprop persist.vendor.haptic_profile op13gentle
 
 on property:debug.high_touch_rate=1
     setprop persist.vendor.high_touch_rate 1
