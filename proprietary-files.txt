@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 12 (CPH2573_16.0.3.500(EX01)).
+## are from OnePlus 12 (CPH2573_16.0.5.702(EX01)).
 
 # Current blobs with ELF checks disabled:
 # libOPAlgoCamFaceBeautyCap, libEIS, libHIS, libOGLManager, libarcsoft_high_dynamic_range_v4 depends on NDK libnativewindow and build is unable to resolve its symbols
@@ -318,7 +318,7 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.1.so
 vendor/lib64/vendor.qti.hardware.embmsslaidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.atfwd-V1-ndk.so
 
-# Data (RIL) - Pinned from Asus WW-36.0210.1420.27
+# Data (RIL) - Pinned from Asus WW-36.0210.1420.39
 vendor/etc/data/dsi_config.xml|b72d8f7cea51d1317dcf1852016537855d7a7c70
 vendor/etc/data/nicm_config.xml|582d3b9be493883f55b3e59036e865e0194c6e59
 vendor/etc/data/tlpd_oem_config.xml|c8d40cdc8b34dd132c61372459c09d84db90baa6
@@ -607,7 +607,7 @@ system_ext/etc/sysconfig/qti_whitelist_system_ext.xml|fc930929bee7d1f8ecc5b1c761
 -system_ext/lib64/vendor.qti.imsrtpservice@3.1.so|33008343e8ac15821278faecc1c234e8bea3fe2d
 -system_ext/priv-app/ims/ims.apk;NODEXPO|6d3fa88eb5637eba8ff7c9ddc4a41a0b46eb2e03
 
-# IMS(VENDOR) - pinned from WW-36.0210.1420.27
+# IMS(VENDOR) - pinned from WW-36.0210.1420.39
 vendor/etc/init/ims-dataservice-daemon.rc|bf7f184c8975bd6af457d5b9ec544174bf09a2ab
 vendor/etc/init/ims_rtp_daemon.rc|9eac78a24604733b51492df7454932ef81def2b1
 vendor/etc/init/imsdaemon.rc|18bbe0185cece34299e92a5f4f309b59ea93d684
@@ -881,7 +881,7 @@ vendor/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V3-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V4-ndk.so
 
-# QMI - Pinned from Asus WW-36.0210.1420.27
+# QMI - Pinned from Asus WW-36.0210.1420.39
 system/etc/sysconfig/qti_whitelist.xml|9dc30503dd5ae29e6a2b4a4b7f8b0653ff5e06f7
 vendor/etc/init/init.qlm-service.rc|ca1152b1eaadfb438562b0bd488ee923a05f02c5
 vendor/etc/init/qmipriod.debug.rc|94d421875f35fdcb170070f20a221466ad87f97e
@@ -954,7 +954,7 @@ vendor/lib64/libtracker_6dof_impl.so
 vendor/lib64/vendor.qti.hardware.qxr-V1-ndk.so
 vendor/lib64/vendor.qti.qegahal-V1-ndk_platform.so
 
-# RIL - Pinned from Asus WW-36.0210.1420.27
+# RIL - Pinned from Asus WW-36.0210.1420.39
 product/etc/permissions/UimGba.xml|03eb0916550720f168c4f66acdc3fc4abf9993ef
 product/etc/permissions/UimGbaManager.xml|b57f4d048d860d27367df0f0feee6cc78991dfe3
 product/etc/permissions/UimService.xml|cb32679d345f98d5b8ec175c5c3429a2e3718882
@@ -1007,8 +1007,8 @@ vendor/etc/telephony_packages.xml|74e46752734db56332d2dd79ee1a1d89cb5dd328
 -vendor/lib64/libqms_client.so|454e3b687f889572d7293b375b7caad74a621250|5166bc7a5e6e4a3018bbf47373331800575c6bad
 -vendor/lib64/libril-db.so|fb8b1f87f1d91e67e05ed6200aedd80778e6ec79|becc8d1d47cbdc63110d8d83bdefc1062a57d31c
 -vendor/lib64/libril-legacy.so|86ae46d28629df865be8aec5623c22403b797c7d
--vendor/lib64/libril-qc-ltedirectdisc.so|a8259d04bd7d81e24823ea130b560b02f0c2a943
--vendor/lib64/libril-qc-radioconfig.so|19c284a8929a06208b6b5fa2378629e9f5705426
+-vendor/lib64/libril-qc-ltedirectdisc.so|835708ab2c14a6d103e6fdbd00ded2ffce4df925
+-vendor/lib64/libril-qc-radioconfig.so|604be52cbd5e7fa949158573b0d14ba90015ae41
 -vendor/lib64/librilqmimiscservices.so|7245ed9facfa523e4d001bcdd6934644884ae087
 -vendor/lib64/libtlpd.so|54f653f64ca705a0ad6bffc1bb00466c4be59031
 -vendor/lib64/libtlpd_configmgr.so|55339dc2f1b4623835a240403b14b092303f55c7
