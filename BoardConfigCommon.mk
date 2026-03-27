@@ -307,3 +307,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/sm8650-common/BoardConfigVendor.mk
+
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true

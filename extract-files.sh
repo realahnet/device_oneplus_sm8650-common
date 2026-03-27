@@ -255,6 +255,21 @@ function blob_fixup() {
                 sed -i 's/vec4(dstYuv\.r, dstYuv\.b, dstYuv\.g, 1\.0)/vec4(dstYuv.r, dstYuv.g, dstYuv.b, 1.0)/g' "${2}"
             esac
             ;;
+        odm/lib64/libsharebuffer_impl.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                grep -q "libutils-stock.so" "${2}" || "${PATCHELF}" --replace-needed "libutils.so" "libutils-stock.so" "${2}"
+                grep -q "libui-stock.so" "${2}" || "${PATCHELF}" --replace-needed "libui.so" "libui-stock.so" "${2}"
+            esac
+            ;;
+        vendor/lib64/libui-stock.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                sed -i "s/android.hardware.graphics.common-V6-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
+            esac
+            ;;
         *)
             return 1
             ;;
