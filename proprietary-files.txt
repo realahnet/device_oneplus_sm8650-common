@@ -369,6 +369,16 @@ vendor/lib64/libdiag.so
 vendor/lib64/libdiagjni.so
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
+# Dolby Vision
+odm/etc/media_codecs_dolby_vision.xml:vendor/etc/media_codecs_dolby_vision.xml
+odm/lib64/libdolbyclstc.so
+odm/lib64/libdolbydecoderprocessor.so
+odm/lib64/libdolbyeglcore.so
+odm/lib64/libdolbyencoderprocessor.so
+odm/lib64/libdolbyottcameracontrol.so
+odm/lib64/libqcodec2_dolbydecoderfilter.so
+odm/lib64/libqcodec2_dolbyencoderfilter.so
+
 # DPM
 system_ext/bin/dpmd
 system_ext/bin/tcmd
