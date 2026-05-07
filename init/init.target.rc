@@ -280,9 +280,6 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
     write /proc/sys/kernel/sched_schedstats 0
 
-    # Enable ADFR features (only functions on supported devices)
-    write /sys/kernel/oplus_display/adfr_config 0x109f
-
 on property:debug.haptic_profile=*
     setprop persist.vendor.haptic_profile ${debug.haptic_profile}
 
