@@ -240,7 +240,7 @@ on property:vendor.post_boot.parsed=1
 
     #top-app
     write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.uclamp.min 20
+    write /dev/cpuctl/top-app/cpu.uclamp.min 40
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
 
     #foreground
