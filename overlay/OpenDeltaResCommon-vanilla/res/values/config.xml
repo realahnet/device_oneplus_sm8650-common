@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- URL base to find the full zip files, %s is replaced to be property_device value. -->
+	<string name="url_base_full" formatted="false">https://index.ayushxfn.com/0:/YAAP/%s/vanilla/</string>
+
+</resources>

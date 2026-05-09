@@ -436,10 +436,16 @@ PRODUCT_PACKAGES += \
     DeviceAsWebcamResTarget \
     FrameworksResTarget \
     NcmTetheringOverlay \
+    OpenDeltaResCommon \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \
     WifiResTarget
+
+ifneq ($(TARGET_BUILD_GAPPS),true)
+PRODUCT_PACKAGES += \
+    OpenDeltaResCommon-vanilla
+endif
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
