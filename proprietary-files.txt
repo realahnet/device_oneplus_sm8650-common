@@ -161,9 +161,6 @@ vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libquasar.so
 vendor/lib64/soundfx/libshoebox.so
 
-# Audio (Dolby)
-odm/etc/dolby/multimedia_dolby_dax_default.xml:vendor/etc/dolby/dax-default.xml
-
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
