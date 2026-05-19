@@ -38,6 +38,3 @@ ro.vendor.oplus.sensor.use_black_mode=true
 
 # SVN
 ro.build.version.svn=40
-
-# Widevine
-vendor.wv.oemcrypto.debug.enable_prov40=true
