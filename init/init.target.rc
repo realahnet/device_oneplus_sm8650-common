@@ -278,20 +278,8 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
     write /proc/sys/kernel/sched_schedstats 0
 
-on property:debug.haptic_profile=richtap
-    setprop persist.vendor.haptic_profile richtap
-
-on property:debug.haptic_profile=crisp
-    setprop persist.vendor.haptic_profile crisp
-
-on property:debug.haptic_profile=gentle
-    setprop persist.vendor.haptic_profile gentle
-
-on property:debug.haptic_profile=op13crisp
-    setprop persist.vendor.haptic_profile op13crisp
-
-on property:debug.haptic_profile=op13gentle
-    setprop persist.vendor.haptic_profile op13gentle
+on property:debug.haptic_profile=*
+    setprop persist.vendor.haptic_profile ${debug.haptic_profile}
 
 on property:debug.high_touch_rate=1
     setprop persist.vendor.high_touch_rate 1
