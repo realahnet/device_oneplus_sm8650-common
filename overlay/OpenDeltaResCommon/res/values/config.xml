@@ -13,4 +13,7 @@
 	<!-- URL base to fetch cert jsons. first %s is replaced by branch name second by property_device -->
 	<string name="url_cert_json" formatted="false">https://raw.githubusercontent.com/realahnet/ota-info/%s/%s/cert.json</string>
 
+	<!-- Whether device supports A/B performance flashing -->
+        <item name="support_ab_perf_mode" type="bool">true</item>
+
 </resources>
