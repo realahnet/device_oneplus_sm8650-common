@@ -50,10 +50,7 @@ function lib_to_package_fixup_vendor_variants() {
 	    libPanelChaplin | \
             libtriplecam_optical_zoom_control | \
             libtriplecam_video_optical_zoom | \
-            vendor.oplus.hardware.camera_rfi-V1-ndk | \
-            vendor.oplus.hardware.cammidasservice-V1-ndk | \
             vendor.oplus.hardware.displaycolorfeature-V1-ndk | \
-            vendor.oplus.hardware.displaypanelfeature-V1-ndk | \
             vendor.pixelworks.hardware.display@1.0 | \
             vendor.pixelworks.hardware.display@1.1 | \
             vendor.pixelworks.hardware.display@1.2 | \
