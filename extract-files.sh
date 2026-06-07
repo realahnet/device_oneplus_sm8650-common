@@ -227,6 +227,13 @@ function blob_fixup() {
                 grep -qxF "libQnnHtpStub.so" "${2}" || echo "libQnnHtpStub.so" >> "${2}"
             esac
             ;;
+        odm/lib64/libBasicTonePhoto.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                sed -i 's/vec4(dstYuv\.r, dstYuv\.b, dstYuv\.g, 1\.0)/vec4(dstYuv.r, dstYuv.g, dstYuv.b, 1.0)/g' "${2}"
+            esac
+            ;;
         *)
             return 1
             ;;
