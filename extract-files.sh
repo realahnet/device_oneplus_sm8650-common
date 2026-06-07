@@ -230,6 +230,19 @@ function blob_fixup() {
                 grep -qxF "libapsfixup.so" "${2}" || echo "libapsfixup.so" >> "${2}"
             esac
             ;;
+        # Master/Pro-mode photos come out with RED/BLUE swapped. Pro mode captures RAW10 and the
+        # OnePlus OCCE tone-mapper (libBasicTonePhoto.so) runs an OpenGL shader whose body contains a
+        # U/V (Cb/Cr) reorder `dstYuv = vec4(dstYuv.r, dstYuv.b, dstYuv.g, 1.0)`. On this port the net
+        # result is a single uncompensated chroma swap -> R/B swapped JPEG. Undo the swap in the
+        # embedded GLSL (length-preserving). Normal/Photo mode does NOT use BasicTone, so this only
+        # affects the (otherwise crisp) Master/Pro path..
+        odm/lib64/libBasicTonePhoto.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                sed -i 's/vec4(dstYuv\.r, dstYuv\.b, dstYuv\.g, 1\.0)/vec4(dstYuv.r, dstYuv.g, dstYuv.b, 1.0)/g' "${2}"
+            esac
+            ;;
         *)
             return 1
             ;;
