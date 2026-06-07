@@ -100,6 +100,18 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "s/android.hardware.graphics.common-V3-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
             sed -i "s/android.hardware.graphics.common-V4-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
+            # APS turbo soft/GREEN/crash is now fixed at RUNTIME by libapsfixup.so
+            # (device/oneplus/dodge/apsfixup), loaded via this DT_NEEDED. Root cause: the port's
+            # gralloc/IMapper reports a wrong plane layout for the 4096x3072 P010 capture-output
+            # buffer, so the byte-identical ArcSoft/Algo blobs build a garbage chroma plane. The
+            # interposer corrects, at runtime: (1) ARC_Turbo_RAW_Process output struct chroma plane
+            # ptr = luma + Ysize (was align_up(luma,0) = 4GB), (2) chroma pitch = Y stride (was 0),
+            # (3) p010LSB2MSBNeon length so w4*w5*1.5 == buffer (full Y+UV, no overrun). Turbo runs
+            # normally -> sharp + correct color.
+            case "${DEVICE}" in
+            giulia | giuliac)
+                 grep -q "libapsfixup.so" "${2}" || "${PATCHELF}" --add-needed "libapsfixup.so" "${2}"
+            esac
             ;;
         odm/lib64/libCOppLceTonemapAPI.so|odm/lib64/libCS.so|odm/lib64/libSuperRaw.so|odm/lib64/libYTCommon.so|odm/lib64/libyuv2.so)
             [ "$2" = "" ] && return 0
