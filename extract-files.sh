@@ -210,6 +210,23 @@ function blob_fixup() {
                 "${PATCHELF_0_18}" --clear-symbol-version "remote_register_buf" "${2}"
             esac
             ;;
+        vendor/etc/public.libraries.txt)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                grep -qxF "libarcsoft_hdr_couple_api.so" "${2}" || echo "libarcsoft_hdr_couple_api.so" >> "${2}"
+                grep -qxF "libarcsoft_high_dynamic_range_couple.so" "${2}" || echo "libarcsoft_high_dynamic_range_couple.so" >> "${2}"
+                grep -qxF "libarcsoft_smart_denoise.so" "${2}" || echo "libarcsoft_smart_denoise.so" >> "${2}"
+                grep -qxF "libarcsoft_turbo_hdr_raw.so" "${2}" || echo "libarcsoft_turbo_hdr_raw.so" >> "${2}"
+                grep -qxF "libarcsoft_turbo_raw.so" "${2}" || echo "libarcsoft_turbo_raw.so" >> "${2}"
+                grep -qxF "libarcsoft_qnnhtp.so" "${2}" || echo "libarcsoft_qnnhtp.so" >> "${2}"
+                grep -qxF "libQnnHtp.so" "${2}" || echo "libQnnHtp.so" >> "${2}"
+                grep -qxF "libQnnSystem.so" "${2}" || echo "libQnnSystem.so" >> "${2}"
+                grep -qxF "libQnnHtpV75Stub.so" "${2}" || echo "libQnnHtpV75Stub.so" >> "${2}"
+                grep -qxF "libQnnGpu.so" "${2}" || echo "libQnnGpu.so" >> "${2}"
+                grep -qxF "libQnnHtpStub.so" "${2}" || echo "libQnnHtpStub.so" >> "${2}"
+            esac
+            ;;
         *)
             return 1
             ;;
