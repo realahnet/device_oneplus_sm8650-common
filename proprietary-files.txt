@@ -188,10 +188,6 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Camera
-system/lib64/libutils.so:vendor/lib64/libutils-stock.so;FIX_SONAME
-system/lib64/libui.so:vendor/lib64/libui-stock.so;FIX_SONAME
-
 # CDSP
 odm/lib64/aiframe/cdsp/signed/libQnnHtpV75Skel.so;MODULE_SUFFIX=.signed.aiframe
 odm/lib64/aiframe/cdsp/unsigned/libQnnHtpV75Skel.so;MODULE_SUFFIX=.unsigned.aiframe

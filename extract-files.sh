@@ -259,7 +259,6 @@ function blob_fixup() {
             case "${DEVICE}" in
             giulia | giuliac)
                 [ "$2" = "" ] && return 0
-                grep -q "libutils-stock.so" "${2}" || "${PATCHELF}" --replace-needed "libutils.so" "libutils-stock.so" "${2}"
                 grep -q "libui-stock.so" "${2}" || "${PATCHELF}" --replace-needed "libui.so" "libui-stock.so" "${2}"
             esac
             ;;
@@ -267,7 +266,7 @@ function blob_fixup() {
             case "${DEVICE}" in
             giulia | giuliac)
                 [ "$2" = "" ] && return 0
-                sed -i "s/android.hardware.graphics.common-V6-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
+                sed -i "s/android.hardware.graphics.common-V4-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
             esac
             ;;
         *)
