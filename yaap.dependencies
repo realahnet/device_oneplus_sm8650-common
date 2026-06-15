@@ -20,10 +20,6 @@
     "target_path": "vendor/oneplus/sm8650-common"
   },
   {
-    "repository": "vendor_sony_dolby",
-    "target_path": "vendor/sony/dolby"
-  },
-  {
     "repository": "packages_apps_TouchGestures",
     "target_path": "packages/apps/TouchGestures"
   }

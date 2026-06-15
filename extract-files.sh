@@ -160,7 +160,6 @@ function blob_fixup() {
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml|vendor/etc/media_codecs_cliffs_v0.xml)
             [ "$2" = "" ] && return 0
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio)/d" "${2}"
-            sed -i '/<MediaCodecs>/a\    <Include href="media_codecs_dolby_audio.xml" />' "${2}"
             ;;
         vendor/lib64/libqcodec2_core.so)
             [ "$2" = "" ] && return 0
