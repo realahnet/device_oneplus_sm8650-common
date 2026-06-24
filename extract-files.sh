@@ -222,6 +222,13 @@ function blob_fixup() {
                 "${PATCHELF_0_18}" --clear-symbol-version "remote_register_buf" "${2}"
             esac
             ;;
+        odm/lib64/libImageWarpMask.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                "${PATCHELF_0_18}" --set-soname "libImageWarpMask.so" "${2}"
+            esac
+            ;;
         vendor/etc/public.libraries.txt)
             case "${DEVICE}" in
             giulia | giuliac)
