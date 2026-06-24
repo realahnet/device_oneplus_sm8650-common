@@ -261,6 +261,14 @@ function blob_fixup() {
                 sed -i "s/android.hardware.graphics.common-V4-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
             esac
             ;;
+        odm/lib64/lib2DSlender.so)
+            case "${DEVICE}" in
+            giulia | giuliac)
+                [ "$2" = "" ] && return 0
+                sed -i 's/\x6f\x29\x00\xb9\xaf\x3e\x40\xf9/\x6f\x29\x00\xb9\x26\x00\x00\x14/' "${2}"
+                ;;
+            esac
+            ;;
         *)
             return 1
             ;;
