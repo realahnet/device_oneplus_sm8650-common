@@ -424,7 +424,7 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.performance-service
 
 # OPlus FWK
-$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
+#$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
