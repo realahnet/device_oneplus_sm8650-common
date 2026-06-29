@@ -415,9 +415,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
-# OPlus Camera
-$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
-
 # OPlus dummy services
 PRODUCT_PACKAGES += \
     vendor.oplus.hardware.osense.client-service \
