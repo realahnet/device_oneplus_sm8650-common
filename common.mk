@@ -130,6 +130,11 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.boot-service.qti.recovery
 
+
+# Passthrough charging
+PRODUCT_PACKAGES += \
+    BypassCharge
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor \

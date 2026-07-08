@@ -22,5 +22,9 @@
   {
     "repository": "packages_apps_TouchGestures",
     "target_path": "packages/apps/TouchGestures"
+  },
+  {
+    "repository": "packages_apps_BypassCharge",
+    "target_path": "packages/apps/BypassCharge"
   }
 ]
