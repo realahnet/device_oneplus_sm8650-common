@@ -141,6 +141,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('libQnnHtpV75Stub.so')
         .add_line_if_missing('libQnnGpu.so')
         .add_line_if_missing('libQnnHtpStub.so'),
+    'system_ext/etc/seccomp_policy/tcmd.policy': blob_fixup()
+        .add_line_if_missing('lseek: 1')
 }  # fmt: skip
 
 module = ExtractUtilsModule(
