@@ -144,7 +144,6 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/etc/seccomp_policy/tcmd.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
-        .add_line_if_missing('gettid: 1')
         .add_line_if_missing('lseek: 1'),
 }  # fmt: skip
 

@@ -130,7 +130,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.boot-service.qti.recovery
 
-
 # Passthrough charging
 PRODUCT_PACKAGES += \
     BypassCharge
@@ -657,6 +656,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+$(call soong_config_set,update_engine,map_vabc_in_recovery,true)
 
 # USB
 PRODUCT_PACKAGES += \
