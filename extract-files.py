@@ -78,9 +78,6 @@ blob_fixups: blob_fixups_user_type = {
     ),
     'odm/etc/permissions/vendor-oplus-hardware-charger.xml': blob_fixup()
         .regex_replace('/system/system_ext', '/system_ext'),
-    'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
-        .add_line_if_missing('sched_get_priority_min: 1')
-        .add_line_if_missing('sched_get_priority_max: 1'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
     'system_ext/bin/horae': blob_fixup()
