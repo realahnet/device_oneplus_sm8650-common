@@ -68,9 +68,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/qcrilNr_aidl_SecureElementService.so',
     ): blob_fixup()
         .replace_needed('android.hardware.secure_element-V1-ndk.so', 'android.hardware.secure_element-V1-ndk_odm.so'),
-    'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff': blob_fixup()
-        .add_needed('libshims_aidl_fingerprint_v3.oplus.so')
-        .replace_needed('libtinyxml2.so', 'libtinyxml2_stock.so'),
     'odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
         .regex_replace(r'(group system input uhid\n)', r'\1    task_profiles ProcessCapacityHigh MaxPerformance\n'),
     'odm/etc/init/init.touchDaemon.rc': blob_fixup()
