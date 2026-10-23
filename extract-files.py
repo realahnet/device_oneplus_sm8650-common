@@ -70,9 +70,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.secure_element-V1-ndk.so', 'android.hardware.secure_element-V1-ndk_odm.so'),
     'odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
         .regex_replace(r'(group system input uhid\n)', r'\1    task_profiles ProcessCapacityHigh MaxPerformance\n'),
-    'odm/etc/init/init.touchDaemon.rc': blob_fixup()
-        .regex_replace(r'(group root inet misc sdcard_rw sdcard_r media_rw system radio input system\n)', r'\1    task_profiles ProcessCapacityHigh MaxPerformance\n',
-    ),
     'odm/etc/permissions/vendor-oplus-hardware-charger.xml': blob_fixup()
         .regex_replace('/system/system_ext', '/system_ext'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
@@ -83,8 +80,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
     (
         'vendor/bin/qvrdatauploader',
-        'odm/bin/hw/vendor-oplus-hardware-touch-V2-service',
-        'odm/bin/touchDaemon',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2_stock.so'),
     (
