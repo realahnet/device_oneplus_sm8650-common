@@ -113,8 +113,6 @@ vendor/lib64/rfs/dsp/libworker_pool.so:vendor/lib/rfsa/adsp/libworker_pool.so;SY
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
-odm/lib64/lib_lvacfs.so
-odm/lib64/liblvacfs_wrapper.so
 vendor/etc/models/acd/environment.eai
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
